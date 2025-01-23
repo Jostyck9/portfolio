@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting";
 ---
 
 <BaseLayout pageTitle="Portfolio">
     <h2>Mon sous-titre de blog global</h2>
+    <Greeting client:load messages={["Salut", "Hello", "Bonjour", "Coucou"]} />
 </BaseLayout>
