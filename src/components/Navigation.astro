@@ -1,10 +1,33 @@
 ---
-
+const items: { href: string; label: string }[] = [
+    {
+        href: "/",
+        label: "Accueil",
+    },
+    {
+        href: "/about/",
+        label: "À propos",
+    },
+    {
+        href: "/blog/",
+        label: "Blog",
+    },
+    {
+        href: "/tags/",
+        label: "Tags",
+    },
+];
 ---
 
-<div class="nav-links">
-    <a href="/portfolio/">Accueil</a>
-    <a href="/portfolio/about/">À propos</a>
-    <a href="/portfolio/blog/">Blog</a>
-    <a href="/portfolio/tags/">Tags</a>
+<div class="nav-links none w-full top-20 left-[48px] m-0 sm:ml-[5em] sm:block sm:static sm:w-auto">
+    {
+        items.map((item) => (
+            <a
+                class="block text-center py-2.5 px-0 no-underline text-[1.2rem] font-bold uppercase dark:text-white focus:bg-amber-500 hover:bg-amber-500 sm:inline-block sm:py-4 sm:px-5"
+                href={`/portfolio${item.href}`}
+            >
+                {item.label}
+            </a>
+        ))
+    }
 </div>

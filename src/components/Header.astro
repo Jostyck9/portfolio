@@ -6,8 +6,12 @@ import ThemeIcon from "./ThemeIcon.astro";
 
 <header>
     <nav>
-        <Hamburger />
-        <ThemeIcon />
+        <div class="flex align-middle">
+            <Hamburger />
+            <div class="ml-auto">
+                <ThemeIcon />
+            </div>
+        </div>
         <Navigation />
     </nav>
 </header>
