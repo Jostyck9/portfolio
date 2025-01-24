@@ -1,0 +1,19 @@
+---
+type Props = {
+    tags?: string[];
+};
+
+const { tags } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-2">
+    {
+        tags?.map((tag: string) => (
+            <p class="py-2 px-4 border-dotted border-1 rounded-lg border-gray-300 bg-white text-2xl">
+                <a class=" text-blue-900" href={`/portfolio/tags/${tag}`}>
+                    {tag}
+                </a>
+            </p>
+        ))
+    }
+</div>

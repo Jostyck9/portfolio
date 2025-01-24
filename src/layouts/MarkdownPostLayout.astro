@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
+import Tags from "@components/Tags.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -10,16 +11,6 @@ const { frontmatter } = Astro.props;
     <p><em>{frontmatter.description}</em></p>
     <p>Écrit par : {frontmatter.author}</p>
     <Image src={frontmatter.image.url} width="300" height="200" alt={frontmatter.image.alt} />
-    <div class="flex flex-wrap gap-2 border-dotted border-1 border-b-gray-300 bg-amber-50 text-2xl">
-        {
-            frontmatter.tags.map((tag: string) => (
-                <p class="tag">
-                    <a class="text-blue-900" href={`/portfolio/tags/${tag}`}>
-                        {tag}
-                    </a>
-                </p>
-            ))
-        }
-    </div>
+    <Tags tags={frontmatter.tags}></Tags>
     <slot />
 </BaseLayout>
