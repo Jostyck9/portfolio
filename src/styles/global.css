@@ -2,10 +2,6 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-* {
-    box-sizing: border-box;
-}
-
 .expanded {
     display: none;
 }
